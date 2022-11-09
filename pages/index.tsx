@@ -83,7 +83,7 @@ export default function Home() {
       <div className='card'>
         <div className="card-body text-start photoslist">
           <div className={styles.photoslist}>
-            <div className="list-group mt-3">
+            <div className="list-group mt-3 photos">
               {photos.map((photo: any, i: number) => (
                 <a 
                   href="#photo-slider" 
@@ -141,7 +141,7 @@ export default function Home() {
           <PhotosList />
         </div>
           
-        <div className="col-12 col-md-8 col-xl-9 text-center" id="photo-slider">
+        <div className="col-12 col-md-8 col-xl-9 text-center photo-container" id="photo-slider">
           <Slider photo={selectedPhoto} index={selectedPhotoIndex} onChangePhoto={changePhotoHandler}/>
         </div>
       </main>

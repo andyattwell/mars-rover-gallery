@@ -210,7 +210,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
         
         <div className="col-12 col-md-2 mb-2">
           <label htmlFor="camera" className="form-label">Camera: </label>
-          <select value={camera} name="camera" className="form-select" onChange={(e) => { setCamera(e.target.value) }}>
+          <select value={camera} name="camera" className="form-select camera-select" onChange={(e) => { setCamera(e.target.value) }}>
             <option value=""></option>
             {cameras?.map((cam, index) => (
               <option key={index}>
@@ -223,7 +223,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
         <div className="col-12 col-md-2">
           <div className={"btn-toolbar " + styles.submitbtn} role="toolbar">
             <div className='btn-group me-2' role="group">
-              <input type="submit" value="Submit" className={'btn btn-primary '} onClick={(e) => {e.preventDefault(); submitHandler(e);}}/>
+              <input type="submit" value="Submit" className={'btn btn-primary filter-submit '} onClick={(e) => {e.preventDefault(); submitHandler(e);}}/>
               <button className="btn btn-secondary" onClick={clearFilters}>Clear</button>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
 
         <div className="col-12 col-md-3 mb-2">
           <label htmlFor="rover" className="form-label">Rover: </label>
-          <select name="rover" value={rover ? rover.name : ''} className={'form-select ' + styles.roverSelect} onChange={(e) => { roverHandler(e.target.value) }}>
+          <select name="rover" value={rover ? rover.name : ''} className={'form-select rover-select ' + styles.roverSelect} onChange={(e) => { roverHandler(e.target.value) }}>
             <option value=""></option>
             {rovers.map((rov, index) => (
               <option key={index}>
