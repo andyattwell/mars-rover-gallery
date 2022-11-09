@@ -86,10 +86,10 @@ export default function Home() {
             <div className="list-group mt-3">
               {photos.map((photo: any, i: number) => (
                 <a 
-                  href="#" 
+                  href="#photo-slider" 
                   className={'list-group-item list-group-item-action' + (selectedPhoto?.id === photo.id ? ' active' : '')}
                   key={i} 
-                  onClick={(e) => { e.preventDefault(); setSelectedPhoto(photo); setSelectedPhotoIndex(i) }}>
+                  onClick={() => { setSelectedPhoto(photo); setSelectedPhotoIndex(i) }}>
                   <strong>{photo.rover.name} - {photo.camera.name}</strong> <span>({photo.id})</span><br />
                   <small>Date: {photo.earth_date} - Sol: {photo.sol}</small>
                 </a>
@@ -116,7 +116,6 @@ export default function Home() {
   }
 
   const changePhotoHandler = (index:number) => {
-    console.log('changePhotop', index)
     if (index < 0 || index >= 25) {
       return false
     }
@@ -138,11 +137,11 @@ export default function Home() {
         <div className="col-12">
           <Filters onSubmit={filterHandler} onClear={handleClearFilters}/>
         </div>
-        <div className='col-3 text-center'>
+        <div className='col-12 col-md-4 col-xl-3 mt-2 text-center'>
           <PhotosList />
         </div>
           
-        <div className="col-9 text-center">
+        <div className="col-12 col-md-8 col-xl-9 text-center" id="photo-slider">
           <Slider photo={selectedPhoto} index={selectedPhotoIndex} onChangePhoto={changePhotoHandler}/>
         </div>
       </main>

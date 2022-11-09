@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const uri = process.env.NADA_ENDPOINT
+const uri = process.env.NASA_ENDPOINT
 const KEY = process.env.NASA_API_KEY
 type Params = {
   page: string,

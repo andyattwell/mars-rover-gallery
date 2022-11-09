@@ -192,7 +192,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
     if (rover && !loading){
       return <>
         
-        <div className="col-2 mb-2">
+        <div className="col-12 col-md-3 mb-2">
           
           <div className={styles.formradio}>
             <input type="radio" name="solDate" id="solDate" value="0" checked={!isSolDate} onChange={() => setIsSolDate(0) }/>
@@ -208,7 +208,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
           
         </div>
         
-        <div className="col-2 mb-2">
+        <div className="col-12 col-md-2 mb-2">
           <label htmlFor="camera" className="form-label">Camera: </label>
           <select value={camera} name="camera" className="form-select" onChange={(e) => { setCamera(e.target.value) }}>
             <option value=""></option>
@@ -220,7 +220,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
           </select>
         </div>
 
-        <div className="col-2">
+        <div className="col-12 col-md-2">
           <div className={"btn-toolbar " + styles.submitbtn} role="toolbar">
             <div className='btn-group me-2' role="group">
               <input type="submit" value="Submit" className={'btn btn-primary '} onClick={(e) => {e.preventDefault(); submitHandler(e);}}/>
@@ -234,7 +234,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
   }
 
   const Favorites = () => {
-    return <div className="col-3">
+    return <div className="col-12 col-md-2 text-md-end">
       <div className={"dropdown " + styles.submitbtn}>
         <div className='btn-group' role="group">
           <button className="btn btn-warning" onClick={(e) => {e.preventDefault(); saveFilters() }}>Save</button>
@@ -276,7 +276,7 @@ export default function Filters({ onSubmit, onClear }: Props) {
     <>
       <form className="row">
 
-        <div className="col-3 mb-2">
+        <div className="col-12 col-md-3 mb-2">
           <label htmlFor="rover" className="form-label">Rover: </label>
           <select name="rover" value={rover ? rover.name : ''} className={'form-select ' + styles.roverSelect} onChange={(e) => { roverHandler(e.target.value) }}>
             <option value=""></option>
