@@ -16,11 +16,45 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
   body {
     color: white;
     background: black;
+  }
+}
+
+.ldsdualring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.ldsdualring.small {
+  width: 20px;
+  height: 200px;
+}
+
+.ldsdualring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #0b5ed7;
+  border-color: #0b5ed7 transparent #0b5ed7 transparent;
+  animation: ldsdualring 1.2s linear infinite;
+}
+
+.ldsdualring.small:after {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes ldsdualring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

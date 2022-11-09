@@ -1,5 +1,5 @@
 {
-  "name": "mars-rover-challenge",
+  "name": "nasa-challenge",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
-    "eslint": "8.27.0",
+    "bootstrap": "^5.2.2",
+    "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
     "next": "13.0.2",
     "react": "18.2.0",
